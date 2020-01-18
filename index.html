@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta name="description="
+          content="Hello tinos is a website created by Tinos to show all of his computer science and graphic design work. Hellotinos is also the home page for the Discord bot Pixel bot and Colour bot created by Burnt#6490 AKA Burnt#6490">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+<h1 class="titleWrapper">How much do I weigh?</h1>
+
+<div class="selector-container">
+<label for="weightinput"></label><input class="weightinput" id="weightinput" onkeydown="return isNumber(event);" type="number" min="0"/>
+
+
+
+
+<label>
+    <select class="select-css" name="weightType">
+        <option value="kg">KG</option>
+        <option value="lbs">LBS</option>
+    </select>
+</label>
+</div>
+
+
+</body>
+
+<script>
+
+    // https://stackoverflow.com/a/7295864/9700228
+    // https://coolors.co/11151c-212d40-364156-7d4e57-d66853
+    function isNumber(evt) {
+        evt = (evt) ? evt : window.event;
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        return !(charCode > 31 && (charCode < 48 || charCode > 57));
+    }
+</script>
