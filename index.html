@@ -52,9 +52,17 @@
     // https://coolors.co/11151c-212d40-364156-7d4e57-d66853
 
     function calculateWeight(currentInput, key) {
+        var multBy = items[key][0];
+        var factor = items[key][1];
+        console.log(multBy, factor);
         var newGrams = currentInput * 1000; // Into grams
-        var numberOfItem = parseFloat(newGrams) / parseFloat(items[key]);
-        return numberOfItem.toFixed(2);
+        var numberOfItem = parseFloat(newGrams) / parseFloat(multBy);
+        if (numberOfItem.toFixed(factor) == 0) {
+            numberOfItem = numberOfItem.toExponential();
+        } else {
+            numberOfItem = numberOfItem.toFixed(factor);
+        }
+        return numberOfItem;
 
 
     }
@@ -73,13 +81,10 @@
 
                 var stringResponse = `${number} ${key}`
             } else if (key.toLowerCase().charAt(key.toLowerCase().length - 1) == "s") {
-                var stringResponse = `${number} ${key}\'`;}
-
-            else
-                if (isNaN(number)) {
-                    var stringResponse = `∞ ${key}s`
-                }
-             else {
+                var stringResponse = `${number} ${key}\'`;
+            } else if (isNaN(number)) {
+                var stringResponse = `∞ ${key}s`
+            } else {
                 var stringResponse = `${number} ${key}s`
             }
             document.getElementById(key.toLowerCase()).children[0].innerText = stringResponse;
