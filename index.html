@@ -2,41 +2,84 @@
 <html lang="en">
 <head>
     <title>Home</title>
-    <meta name="description="
-          content="Hello tinos is a website created by Tinos to show all of his computer science and graphic design work. Hellotinos is also the home page for the Discord bot Pixel bot and Colour bot created by Burnt#6490 AKA Burnt#6490">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
+    <script src="./scripts/items.js"></script>
 </head>
 
 <body>
 <h1 class="titleWrapper">How much do I weigh?</h1>
 
 <div class="selector-container">
-<label for="weightinput"></label><input class="weightinput" id="weightinput" onkeydown="return isNumber(event);" type="number" min="0"/>
+    <input class="weightinput" id="weightinput" onkeydown="return isNumber(event);" onkeyup="weightHandler()"
+           type="number" min="0"></input>
 
 
-
-
-<label>
-    <select class="select-css" name="weightType">
-        <option value="kg">KG</option>
-        <option value="lbs">LBS</option>
-    </select>
-</label>
 </div>
 
 
+<div class="packages">
+    <div id="banana" class="package">
+        <h2>0 bananas</h2>
+    </div>
+    <div id="lightbulb" class="package">
+        <h2>0 lightbulbs</h2>
+    </div>
+
+</div>
+
 </body>
 
+
 <script>
+    // https://coolors.co/11151c-212d40-364156-7d4e57-d66853
+
+    function calculateWeight(currentInput, key) {
+        var newGrams = currentInput * 1000; // Into grams
+        var numberOfItem = parseFloat(newGrams) / parseFloat(items[key]);
+        return numberOfItem.toFixed(2);
+
+
+    }
+
+    function weightHandler() {
+        var currentInput = parseFloat(document.getElementById("weightinput").value);
+        if (currentInput == null) {
+            currentInput = '∞';
+        }
+
+        const keys = Object.keys(items);
+        for (const key of keys) {
+            var preElement = document.getElementById(key).innerText;
+            var number = calculateWeight(currentInput, key);
+            console.log(number);
+            if (number == 1) {
+
+                var stringResponse = `${number} ${key}`
+            } else if (isNaN(number)) {
+                var stringResponse = `0 ${key}s`
+            } else {
+                var stringResponse = `${number} ${key}s`
+            }
+            document.getElementById(key).children[0].innerText = stringResponse;
+
+        }
+    }
+
 
     // https://stackoverflow.com/a/7295864/9700228
-    // https://coolors.co/11151c-212d40-364156-7d4e57-d66853
     function isNumber(evt) {
         evt = (evt) ? evt : window.event;
         var charCode = (evt.which) ? evt.which : evt.keyCode;
-        return !(charCode > 31 && (charCode < 48 || charCode > 57));
+        if (evt.keyCode == 190) {
+            return true;
+        } else if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        return true;
     }
+
+    console.log(items);
 </script>

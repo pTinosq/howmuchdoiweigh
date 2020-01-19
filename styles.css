@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 * {
+    font-family: Roboto, serif;
     margin: 0;
     padding: 0;
     -webkit-transition: all .2s;
@@ -21,39 +22,37 @@ body {
     font-family: Roboto, serif;
 }
 
-.weightinput{
-    font-size: 16px;
+.weightinput {
+    font-size: 1.5vw;
     font-family: sans-serif;
     font-weight: 700;
     color: #d66853;
     line-height: 1.3;
-    padding: .6em 1.4em .5em .8em;
-    box-sizing: border-box;
+    padding: 1vw;
     border: 1px solid #364156;
     border-radius: 0.75vw;
     background-color: #364156;
-    width: 5%;
+    background-color: rgba(152, 122, 66, 0);
 }
 
-.select-css{
-    font-size: 16px;
+.select-css {
+    font-size: 1.5vw;
     font-family: sans-serif;
     font-weight: 700;
     color: #d66853;
     line-height: 1.3;
-    padding: .6em 1.4em .5em .8em;
+    padding: 1vw;
     box-sizing: border-box;
     margin: 0;
-    background-color: #364156;
+    background-color: rgba(152, 122, 66, 0);
     border: 1px solid #364156;
     border-radius: .75vw;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
-    width: 4%;
 }
 
-.selector-container{
+.selector-container {
     text-align: center;
 }
 
@@ -65,11 +64,109 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 input[type=number] {
-    -moz-appearance:textfield;
+    -moz-appearance: textfield;
+    text-align: center;
 }
+
 input[type=number]:focus {
-    width: 8%;
-    -webkit-transition: width 0.2s ease-in-out;
     transition: 0.2s ease-in-out;
-    border: 3px solid #d66853;
+    background-color: #d66853;
+    border: 0.3vw solid #fff;
+    color: #fff;
 }
+
+.select-css:focus {
+    transition: 0.2s ease-in-out;
+    background-color: #d66853;
+    border: 0.3vw solid #fff;
+    color: #fff;
+}
+
+.packages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 10vw;
+}
+
+.package {
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 4vw;
+    margin-bottom: 3vw;
+    flex-basis: 10%;
+    background-color: #212d40;
+    color: #d66853;
+    height: 6vw;
+    border-radius: 1vw;
+    flex-basis: 20vw;
+
+}
+
+.package h2 {
+    position: relative;
+    top: 25%;
+    text-align: center;
+    font-size: 1.5vw;
+}
+
+@media screen and (max-width: 600px) {
+    .packages {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    .package {
+        flex-basis: 25%;
+        height: 6vw;
+        width: 6vw;
+
+    }
+
+    .package h2 {
+        font-size: 3vw;
+    }
+
+    .titleWrapper {
+        padding: 4vw;
+        font-size: 7vw;
+    }
+
+    .weightinput {
+        font-size: 4vw;
+        font-family: sans-serif;
+        font-weight: 700;
+        color: #d66853;
+        line-height: 1.3;
+        padding: .6em 1.4em .5em .8em;
+        box-sizing: border-box;
+        border: 1px solid #364156;
+        border-radius: 0.75vw;
+        background-color: #364156;
+    }
+
+    /*.select-css {*/
+    /*    font-size: 4vw;*/
+    /*    font-family: sans-serif;*/
+    /*    font-weight: 700;*/
+    /*    color: #d66853;*/
+    /*    line-height: 1.3;*/
+    /*    padding: .6em 1.4em .5em .8em;*/
+    /*    box-sizing: border-box;*/
+    /*    margin: 0;*/
+    /*    background-color: #364156;*/
+    /*    border: 1px solid #364156;*/
+    /*    border-radius: .75vw;*/
+    /*    -moz-appearance: none;*/
+    /*    -webkit-appearance: none;*/
+    /*    appearance: none;*/
+    /*    width: 230vw;*/
+    /*}*/
+    input[type=number]:focus {
+        -webkit-transition: width 0.2s ease-in-out;
+        transition: 0.2s ease-in-out;
+        border: 3px solid #d66853;
+    }
+}
+
