@@ -9,7 +9,9 @@ var items = {
     "pencil": [8, 2],
     "Cessna Skyhawk 172": [757045.70000302, 4],
     "Iphone 8":[147.418, 2],
-    "Big Ben": [13760000, 4]
+    "Big Ben": [13760000, 4],
+    "War And Peace book":[1474.175, 2],
+    "Curiosity Mars rover":[907184.7, 4]
 
 
 };
