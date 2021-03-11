@@ -34,7 +34,6 @@ body {
     padding-right: 3vw;
     border: 1px solid #364156;
     border-radius: 0.75vw;
-    background-color: #364156;
     background-color: rgba(152, 122, 66, 0);
     width: 20vw;
     outline: none;
@@ -129,7 +128,8 @@ input[type=number]:focus {
 
 .package h2 {
     position: relative;
-    top: 25%;
+    top: 50%;
+    transform: translateY(-50%);
     text-align: center;
     font-size: 1.5vw;
 }

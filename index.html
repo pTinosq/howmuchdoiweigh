@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
-    <script src="./scripts/items.js"></script>
+
 </head>
 
 <body>
@@ -38,96 +38,12 @@
     </div>
 
 
-    <div class="packages">
-        <div id="banana" class="package">
-            <h2>0 bananas</h2>
-        </div>
-        <div id="lightbulb" class="package">
-            <h2>0 lightbulbs</h2>
-        </div>
-        <div id="gold bar" class="package">
-            <h2>0 gold bars</h2>
-        </div>
-        <div id="african bush elephant" class="package">
-            <h2>0 african bush elephants</h2>
-        </div>
-        <div id="cow" class="package">
-            <h2>0 cows</h2>
-        </div>
-        <div id="earth" class="package">
-            <h2>0 earths</h2>
-        </div>
-        <div id="tesla model s" class="package">
-            <h2>0 tesla model s'</h2>
-        </div>
-        <div id="pencil" class="package">
-            <h2>0 pencils</h2>
-        </div>
-        <div id="cessna skyhawk 172" class="package">
-            <h2>0 cessna skyhawk 172s</h2>
-        </div>
+    <div class="packages" id="packages">
 
     </div>
 
+    <script src="./scripts/items.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 
-
-<script>
-    // https://coolors.co/11151c-212d40-364156-7d4e57-d66853
-
-    function calculateWeight(currentInput, key) {
-        var multBy = items[key][0];
-        var factor = items[key][1];
-        console.log(multBy, factor);
-        var newGrams = currentInput * 1000; // Into grams
-        var numberOfItem = parseFloat(newGrams) / parseFloat(multBy);
-        if (numberOfItem.toFixed(factor) == 0) {
-            numberOfItem = numberOfItem.toExponential();
-        } else {
-            numberOfItem = numberOfItem.toFixed(factor);
-        }
-        return numberOfItem;
-
-
-    }
-
-    function weightHandler() {
-        var currentInput = parseFloat(document.getElementById("weightinput").value);
-        if (isNaN(currentInput)) {
-            currentInput = '∞';
-        }
-
-        const keys = Object.keys(items);
-        for (const key of keys) {
-            var preElement = document.getElementById(key.toLowerCase()).innerText;
-            var number = calculateWeight(currentInput, key);
-            if (number == 1) {
-
-                var stringResponse = `${number} ${key}`
-            } else if (key.toLowerCase().charAt(key.toLowerCase().length - 1) == "s") {
-                var stringResponse = `${number} ${key}\'`;
-            } else if (isNaN(number)) {
-                var stringResponse = `∞ ${key}s`
-            } else {
-                var stringResponse = `${number} ${key}s`
-            }
-            document.getElementById(key.toLowerCase()).children[0].innerText = stringResponse;
-
-        }
-    }
-
-
-    // https://stackoverflow.com/a/7295864/9700228
-    function isNumber(evt) {
-        evt = (evt) ? evt : window.event;
-        var charCode = (evt.which) ? evt.which : evt.keyCode;
-
-        if (evt.keyCode == 190 || evt.keyCode == 8 || evt.keyCode == 37 || evt.keyCode == 38 || evt.keyCode == 39 || evt
-            .keyCode == 40 || evt.keyCode == 46) {
-            return true;
-        } else if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-            return false;
-        }
-        return true;
-    }
-</script>
+</html>
