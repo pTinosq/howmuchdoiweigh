@@ -3,22 +3,25 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144577045-2"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-144577045-2');
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-144577045-2');
 </script>
 
 <head>
     <title>How much do I weigh?</title>
     <meta name="title" content="How much do I weigh?">
-	<meta name="description" content="howmuchdoiweigh.com is a website that helps you convert any weight into many more useful and universal weight measurement units.">
-	<meta name="keywords" content="weight, kilograms, how much, weigh, heavy, convert, conversion">
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="English">
-
+    <meta name="description"
+        content="howmuchdoiweigh.com is a website that helps you convert any weight into many more useful and universal weight measurement units.">
+    <meta name="keywords" content="weight, kilograms, how much, weigh, heavy, convert, conversion">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
@@ -26,46 +29,45 @@
 </head>
 
 <body>
-<h1 class="titleWrapper">How much do I weigh?</h1>
+    <h1 class="titleWrapper">How much do I weigh?</h1>
 
-<div class="selector-container">
-    <input class="weightinput" id="weightinput" onkeydown="return isNumber(event);" onkeyup="weightHandler()"
-           type="number" min="0"></input>
-
-
-</div>
-
-
-<div class="packages">
-    <div id="banana" class="package">
-        <h2>0 bananas</h2>
-    </div>
-    <div id="lightbulb" class="package">
-        <h2>0 lightbulbs</h2>
-    </div>
-    <div id="gold bar" class="package">
-        <h2>0 gold bars</h2>
-    </div>
-    <div id="african bush elephant" class="package">
-        <h2>0 african bush elephants</h2>
-    </div>
-    <div id="cow" class="package">
-        <h2>0 cows</h2>
-    </div>
-    <div id="earth" class="package">
-        <h2>0 earths</h2>
-    </div>
-    <div id="tesla model s" class="package">
-        <h2>0 tesla model s'</h2>
-    </div>
-    <div id="pencil" class="package">
-        <h2>0 pencils</h2>
-    </div>
-    <div id="cessna skyhawk 172" class="package">
-        <h2>0 cessna skyhawk 172s</h2>
+    <div class="selector-container">
+        <p>kg</p>
+        <input class="weightinput" id="weightinput" onkeydown="return isNumber(event);" onkeyup="weightHandler()"
+            type="number" min="0"></input>
     </div>
 
-</div>
+
+    <div class="packages">
+        <div id="banana" class="package">
+            <h2>0 bananas</h2>
+        </div>
+        <div id="lightbulb" class="package">
+            <h2>0 lightbulbs</h2>
+        </div>
+        <div id="gold bar" class="package">
+            <h2>0 gold bars</h2>
+        </div>
+        <div id="african bush elephant" class="package">
+            <h2>0 african bush elephants</h2>
+        </div>
+        <div id="cow" class="package">
+            <h2>0 cows</h2>
+        </div>
+        <div id="earth" class="package">
+            <h2>0 earths</h2>
+        </div>
+        <div id="tesla model s" class="package">
+            <h2>0 tesla model s'</h2>
+        </div>
+        <div id="pencil" class="package">
+            <h2>0 pencils</h2>
+        </div>
+        <div id="cessna skyhawk 172" class="package">
+            <h2>0 cessna skyhawk 172s</h2>
+        </div>
+
+    </div>
 
 </body>
 
@@ -120,12 +122,12 @@
         evt = (evt) ? evt : window.event;
         var charCode = (evt.which) ? evt.which : evt.keyCode;
 
-        if (evt.keyCode == 190 || evt.keyCode == 8 || evt.keyCode == 37 || evt.keyCode == 38 || evt.keyCode == 39 || evt.keyCode == 40 || evt.keyCode == 46) {
+        if (evt.keyCode == 190 || evt.keyCode == 8 || evt.keyCode == 37 || evt.keyCode == 38 || evt.keyCode == 39 || evt
+            .keyCode == 40 || evt.keyCode == 46) {
             return true;
         } else if (charCode > 31 && (charCode < 48 || charCode > 57)) {
             return false;
         }
         return true;
     }
-
 </script>
