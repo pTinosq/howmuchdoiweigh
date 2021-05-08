@@ -46,9 +46,7 @@ function weightHandler() {
 function noMinus(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
-    console.log(charCode);
     if(charCode == 173 || charCode ==  189 || charCode == 187){
-        console.log("invalid");
         return false;
     } else {
         return true;
