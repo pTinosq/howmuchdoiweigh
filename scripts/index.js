@@ -14,9 +14,7 @@ function setup() {
 
 function calculateWeight(user_weight, id) {
     var object_weight = items[id].weight;
-    // KG -> Grams
-    var user_weight = user_weight * 1000;
-
+    
     var value = parseFloat(user_weight) / parseFloat(object_weight);
 
     return value.toFixed(3);
