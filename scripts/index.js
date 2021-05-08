@@ -19,7 +19,7 @@ function calculateWeight(user_weight, id) {
 
     var value = parseFloat(user_weight) / parseFloat(object_weight);
 
-    return value.toFixed(1);
+    return value.toFixed(3);
 }
 
 function weightHandler() {
@@ -27,8 +27,11 @@ function weightHandler() {
 
     for (i = 0; i < Object.keys(items).length; i++) {
         var obj = document.getElementById(Object.keys(items)[i]).lastChild;
-        if (isNaN(user_weight) || user_weight == "Infinity") {
+        if(user_weight == "Infinity"){
             obj.innerHTML = `∞ ${items[Object.keys(items)[i]].plural}`;
+        }
+        else if (isNaN(user_weight)) {
+            obj.innerHTML = `Invalid ${items[Object.keys(items)[i]].plural}`;
         } else {
             var calc_value = calculateWeight(user_weight, Object.keys(items)[i]);
             if (calc_value == 1) {
@@ -42,20 +45,16 @@ function weightHandler() {
 
 
 // https://stackoverflow.com/a/7295864/9700228
-function isNumber(evt) {
+function noMinus(evt) {
     evt = (evt) ? evt : window.event;
     var charCode = (evt.which) ? evt.which : evt.keyCode;
     console.log(charCode);
-    if (evt.keyCode == 190 || evt.keyCode == 8 || evt.keyCode == 37 || evt.keyCode == 38 || evt.keyCode == 39 ||
-        evt
-        .keyCode == 40 || evt.keyCode == 46) {
-        return true;
-    } else if ((evt.keyCode >= 96) || (evt.keyCode <= 105)) {
-        return true
-    } else if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+    if(charCode == 173 || charCode ==  189 || charCode == 187){
+        console.log("invalid");
         return false;
+    } else {
+        return true;
     }
-    return true;
 }
 
 setup();

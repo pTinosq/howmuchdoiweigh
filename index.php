@@ -1,17 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144577045-2"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
 
-    gtag('config', 'UA-144577045-2');
-</script>
 
 <head>
     <title>How much do I weigh?</title>
@@ -25,6 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="./styles.css" rel="stylesheet">
+    <link href="/includes/cookez/cookez.css" rel="stylesheet">
+    <?php include $_SERVER["DOCUMENT_ROOT"] . "/includes/cookez/cookez.php"; ?>
 
 </head>
 
@@ -33,7 +26,7 @@
 
     <div class="selector-container">
         <p>kg</p>
-        <input class="weightinput" id="weightinput" onkeydown="return isNumber(event);" onkeyup="weightHandler()"
+        <input class="weightinput" id="weightinput" onkeydown="return noMinus(event)" onkeyup="weightHandler()"
             type="number" min="0"></input>
     </div>
 

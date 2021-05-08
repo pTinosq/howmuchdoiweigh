@@ -21,5 +21,40 @@ var items = {
         "singular": "lightbulb",
         "plural": "lightbulbs",
         "weight": 34
+    },
+    "24k_gold_bar": {
+        "singular": "24k gold bar",
+        "plural": "24k gold bars",
+        "weight": 12400
+    },
+    "african_bush_elephants": {
+        "singular": "African bush elephant",
+        "plural": "African bush elephants",
+        "weight": 6000000
+    },
+    "cows": {
+        "singular": "cow",
+        "plural": "cows",
+        "weight": 1100000
+    },
+    "earth": {
+        "singular": "earth",
+        "plural": "earths",
+        "weight": 5.972e24
+    },
+    "tesla_model_s": {
+        "singular": "Tesla model S",
+        "plural": "Tesla model S'",
+        "weight": 2250000
+    },
+    "pencil": {
+        "singular": "pencil",
+        "plural": "pencils",
+        "weight": 8
+    },
+    "cessna_skyhawk_172": {
+        "singular": "Cessna Skyhawk 172",
+        "plural": "Cessna Skyhawk 172s",
+        "weight": 757045.70000302
     }
 };
