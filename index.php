@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Global site tag (gtag.js) - Google Analytics -->
 
 
 
@@ -23,7 +22,6 @@
 
 <body>
     <h1 class="titleWrapper">How much do I weigh?</h1>
-
     <div class="selector-container">
         <p>kg</p>
         <input class="weightinput" id="weightinput" onkeydown="return noMinus(event)" onkeyup="weightHandler()"

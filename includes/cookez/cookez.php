@@ -10,7 +10,6 @@ if (!isset($_COOKIE['allow_cookies'])) {
 if ($cookies_prompt_appeared) {
     // handle tracking
     if ($_COOKIE['allow_cookies'] == "True") { ?>
-
         <head>
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144577045-2"></script>
